@@ -155,6 +155,8 @@
             box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
             transform: scale(1);
             transition: all 300ms ease-in-out;
+            border-radius: .8rem;
+            overflow: hidden;
         }
 
         .recipe img {
@@ -199,6 +201,64 @@
 
         .recipe-author a:hover {
             color: #c9c8c0;
+        }
+
+        .recipe-meta-container {
+            display: flex;
+            flex-flow: row flex;
+            padding: var(--espaco-medio);
+            background: #056622;
+        }
+
+        .recipe-meta {
+            display: flex;
+            flex-flow: column nowrap;
+            flex-shrink: 1;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .recipe-meta-title {
+            font-size: 2rem;
+        }
+
+        .recipe-footer a {
+            background: #131313;
+            display: block;
+            flex-flow: row nowrap;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 2rem;
+            transition: all 300ms ease-in-out;
+        }
+
+        .recipe-footer a:hover {
+            filter: brightness(1.2);
+        }
+
+        .main-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--primaria-preto);
+            color: var(--primaria-branca);
+            padding: var(--espaco-largo);
+
+        }
+
+        .main-footer a {
+            color: white;
+            font-size: 1.2rem;
+            font-family: 'Roboto Slab', serif;
+            text-decoration: none;
+            transition: all 300ms ease-in-out;
+
+        }
+
+        .main-footer a:hover {
+            filter: brightness(.8);
+
         }
     </style>
 
