@@ -1,10 +1,14 @@
 from django.urls import path
 
-from receitas.views import inicio
+from . import views
+
+#from receitas.views import home
+
 
 # http request (Cliente) < http response (Servidor)
 
 
 urlpatterns = [
-    path('', inicio)
+    path('', views.home),
+    path('receita/<id>/', views.receita)
 ]
