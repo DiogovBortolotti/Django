@@ -133,3 +133,5 @@ static/
 anotacao
 .vscode
 venvwindows
+migrations
+receitas/migrations
