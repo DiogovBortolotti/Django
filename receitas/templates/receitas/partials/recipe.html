@@ -13,14 +13,20 @@
         </a>
     </div>
 
+
     <div class="recipe-author">
-        <span class="recipe-author-item">
-            <i class="fas fa-user"></i>
-            {% if receita.primeiro_nome %}
-                {{ receita.primeiro_nome }} {{ receita.segundo_nome }}
-            {% else %}
-                {{ receita.usuario }}
-            {% endif %}
+       
+            <span class="recipe-author-item">
+                <i class="fas fa-user"></i>
+                {% if receita.usuario is not None %}
+                    {% if receita.primeiro_nome %}
+                        {{ receita.primeiro_nome }} {{ receita.segundo_nome }}
+                    {% else %}
+                        {{ receita.usuario }}
+                    {% endif %}
+                {% else %}
+                Desconhecido
+                {% endif %}
         </span>
         <span class="recipe-author-item">
             <i class="fa fa-calendar-alt"></i>
