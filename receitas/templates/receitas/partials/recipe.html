@@ -42,7 +42,7 @@
         {% endif %}
 
     </div>
-    <div class="recipe-content">
+    <div class="recipe_content">
         <p> {{ receita.descricao }}</p>
     </div>
 
@@ -83,8 +83,12 @@
     {% endif %}
 
     {% if detail_page is True %}
-    <div class="preparation-steps">
-        {{ receita.etapa_de_preparo|linebreaksbr }}
-    </div>
+        <div class="preparation-steps">
+            {% if receitaetapa_de_preparo_e_html is True %} 
+            {{ receita.tempo_preparo|safe }}  <!--- MUITO CUIDADO! COLOQUEI PERMISSÃO SOMENTE PARA OS ADMINS DO SITE-->
+        {% else %} 
+            {{ receita.etapa_de_preparo|linebreaksbr }}
+        {% endif %}
+         </div>
     {% endif %}
 </div>

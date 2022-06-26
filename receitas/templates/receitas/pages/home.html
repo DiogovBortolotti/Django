@@ -4,8 +4,12 @@
 {% block content %}
 <title> {% block title %}{% endblock title %} Inicio</title>
 <div class="main-content main-content-list container">
-    {% for receita in receitas %}
+    {% for receita in receitas  %}
         {% include 'receitas/partials/recipe.html' %}
+    {% empty %}
+        <div class="center m-y">
+         <h1>Não há Receitas, tente novamente mais tarde! </h1>
+        </div>
     {% endfor %}
 </div>
 {% endblock content %}
