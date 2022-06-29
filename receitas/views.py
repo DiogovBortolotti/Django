@@ -9,17 +9,17 @@ from .models import Receita
 def home(request):
     receitas = Receita.objects.filter(
         publicacao=True,).order_by('-id')
+    return render(request, 'receitas/pages/categoria.html',
+                  context={'receitas': receitas})
     # receitas = Receita.objects.filter(
-     #   publicacao=True).order_by('-id')
+    #   publicacao=True).order_by('-id')
    # return render(request, 'receitas/pages/home.html',
-      #            context={'receitas': receitas})  # [criar_receita() for _ in range(100)], })
+    #            context={'receitas': receitas})  # [criar_receita() for _ in range(100)], })
 
 
 def categoria(request, categoria_id):
-        receitas = get_list_or_404(
-        Receita.objects.filter(
-            publicacao=True, categoria_id=categoria_id).order_by('-id')
-    )
+    receitas = Receita.objects.filter(
+        publicacao=True, categoria_id=categoria_id).order_by('-id')
     return render(request, 'receitas/pages/categoria.html',
                   context={'receitas': receitas,
                            'titulo': f'{receitas[0].categoria.nome} - Categoria'})
@@ -31,9 +31,8 @@ def categoria(request, categoria_id):
     # return HttpResponse(content='Opa Voce não deveria estár aqui', status=404)
 
 
-
 def receita(request, id):
-    receita=Receita.objects.filter(
+    receita = Receita.objects.filter(
         publicacao=True, id=id).order_by('-id').first()
 
     return render(request, 'receitas/pages/receita.html',

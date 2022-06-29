@@ -135,3 +135,6 @@ anotacao
 venvwindows
 migrations
 receitas/migrations
+
+
+#pip install pytest pytest-django
