@@ -1,6 +1,5 @@
-
 from django.test import TestCase
-from django.urls import resolve, reverse
+from django.urls import reverse
 
 # Create your tests here.
 # pip install pytest-watch

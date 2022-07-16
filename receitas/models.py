@@ -1,3 +1,4 @@
+from email.policy import default
 from pickle import TRUE
 
 from django.contrib.auth.models import User
@@ -25,9 +26,12 @@ class Receita(models.Model):
     data_criacao = models.DateTimeField(auto_now_add=True)
     data_atualizacao = models.DateTimeField(auto_now=True)
     publicacao = models.BooleanField(default=False)
-    capa = models.ImageField(upload_to='receitas/capa/%Y%m/%d/')
+    capa = models.ImageField(
+        upload_to='receitas/capa/%Y/%m/%d/', blank=True, null=True)
     categoria = models.ForeignKey(
-        Categoria, on_delete=models.SET_NULL, null=True, blank=True, default=None)
+        Categoria, on_delete=models.SET_NULL, null=True, blank=True,
+        default=None,
+    )
     usuario = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True
     )

@@ -1,6 +1,4 @@
-from django.http import Http404, HttpResponse
-from django.shortcuts import get_list_or_404, get_object_or_404, render
-from utilitarios.fake_info import criar_receita
+from django.shortcuts import render
 
 from .models import Receita
 
@@ -9,7 +7,7 @@ from .models import Receita
 def home(request):
     receitas = Receita.objects.filter(
         publicacao=True,).order_by('-id')
-    return render(request, 'receitas/pages/categoria.html',
+    return render(request, 'receitas/pages/home.html',
                   context={'receitas': receitas})
     # receitas = Receita.objects.filter(
     #   publicacao=True).order_by('-id')
