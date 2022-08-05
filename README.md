@@ -19,7 +19,7 @@
 - [x] Staticfiles
 - [x] Templates herança, blocos, if, for
 - [x] Models e ORM
-- [...] Pytest e Unittest
+- [.] Pytest e Unittest
 - [ ] Request e Get
 - [ ] TDD
 - [ ] QuerySet com Paginator
@@ -31,7 +31,7 @@
 
 ## Extra
 - [x] VENV
-- [...] Docker
+- [.] Docker
 - [X] MySQL
 - [X] HTML5 e CSS
 - [ ] LINUX
