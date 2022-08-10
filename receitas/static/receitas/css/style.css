@@ -309,3 +309,14 @@ body {
 .m-y{
     margin: 0 var(--espaco-medio);
 }
+
+
+
+.main-search {
+    color: var(--marfim-color);
+    font-size: 1.2rem;
+    font-family: 'Roboto Slab', serif;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+
+}

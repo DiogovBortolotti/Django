@@ -4,10 +4,7 @@ from . import views
 
 app_name = 'receitas'
 
-#from receitas.views import home
-
-
-# http request (Cliente) < http response (Servidor)
+# http request (Cliente) > < http response (Servidor)
 
 
 urlpatterns = [
@@ -15,7 +12,8 @@ urlpatterns = [
 
     path('receita/categoria/<int:categoria_id>/',
          views.categoria, name="categoria"),
+    path('receita/<int:id>/', views.receita, name="receita"),
+    path('receita/search/', views.search, name="search"),
 
-    path('receita/<int:id>/', views.receita, name="receita")
 
 ]

@@ -24,3 +24,8 @@ class ReceitasUrlsTest(TestCase):
     def test_receitas_receita_url(self):
         url_receita = reverse('receitas:receita', kwargs={'id': 1})
         self.assertEqual(url_receita, '/receita/1/')
+
+    def test_receitas_search_url(self):
+        url_receita = reverse('receitas:search')
+        self.assertEqual(url_receita, '/receita/search/')
+        self.fail(url_receita)

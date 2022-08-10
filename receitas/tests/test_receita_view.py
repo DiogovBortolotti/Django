@@ -41,5 +41,12 @@ class ReceitasViewsTest(ReceitaTesteBase):
                       resposta.content.decode('utf-8')
                       )
 
+    # com conteudo testes
 
-# com conteudo testes:
+    def test_receita_search_view(self):
+        resol = resolve(reverse('receitas:search'))
+        self.assertIs(resol.func, views.search)
+
+    def test_template_search_receita(self):
+        resp = self.client.get(reverse('receitas:search'))
+        self.assertTemplateUsed(resp, 'receitas/pages/search.html')

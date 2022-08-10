@@ -15,7 +15,7 @@ class Categoria(models.Model):
 class Receita(models.Model):
     titulo = models.CharField(max_length=80)
     descricao = models.CharField(max_length=200)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True)
     tempo_preparo = models.IntegerField()
     tipo_tempo = models.TextField(max_length=30)
     quantidade_porcao = models.IntegerField()
@@ -26,7 +26,7 @@ class Receita(models.Model):
     data_atualizacao = models.DateTimeField(auto_now=True)
     publicacao = models.BooleanField(default=False)
     capa = models.ImageField(
-        upload_to='receitas/capa/%Y/%m/%d/', blank=True, null=True)
+        upload_to='receitas/capa/%Y/%m/%d/', blank=True)
     categoria = models.ForeignKey(
         Categoria, on_delete=models.SET_NULL, null=True, blank=True,
         default=None,

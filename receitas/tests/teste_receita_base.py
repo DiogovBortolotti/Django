@@ -25,11 +25,11 @@ def criar_categoria(self, nome='Categoria'):
 def criar_autor(self, first_name='name', last_name='lastnaeme',
                 username='user', password='123456',
                 email='username@email.com',):
-    return User.objects.creatse_user(first_name=first_name,
-                                     last_name=last_name,
-                                     username=username,
-                                     password=password,
-                                     email=email,)
+    return User.objects.create_user(first_name=first_name,
+                                    last_name=last_name,
+                                    username=username,
+                                    password=password,
+                                    email=email,)
 
 
 def criar_receita(self,
